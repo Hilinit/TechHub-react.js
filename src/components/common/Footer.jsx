@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-start justify-between">
         <div className="space-y-4 max-w-sm">
           <div className="flex items-center gap-2">
-            <img src="../../../public/logo.png" className="w-9 h-9 lg:w-14 lg:h-14"/>
+            <img src="public/logo.png" className="w-9 h-9 lg:w-14 lg:h-14"/>
             <span className="text-xl font-bold text-white">
               <span className="text-emerald-400">Tech</span>Hub
             </span>

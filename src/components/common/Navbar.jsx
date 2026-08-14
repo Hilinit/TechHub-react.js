@@ -16,7 +16,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
           <div className="w-9 h-9 lg:w-12 lg:h-12  flex items-center justify-center text-emerald-400">
-            <img src="../../../public/logo.png"/>
+            <img src="public/logo.png"/>
           </div>
           <span className="text-xl font-extrabold tracking-wide">
             <span className="text-emerald-400">Tech</span>Hub
