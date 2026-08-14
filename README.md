@@ -1,6 +1,6 @@
 # 🛒 TechHub Store — Modern E-Commerce Platform
 
-TechHub Store — futuristik, kiberpank üslubunda dizayn edilmiş, yüksək performanslı və responsiv e-ticarət (E-commerce) veb tətbiqidir. İstifadəçilər texnoloji məhsulları kateqoriyalar üzrə filterləyə, səbətə əlavə edə və dinamik axtarışlar edə bilərlər.
+TechHub Store — futuristik, kiberpank üslubunda dizayn edilmiş, yüksək performanslı və responsiv e-ticarət (E-commerce) veb tətbiqidir. İstifadəçilər texnoloji məhsulları kateqoriyalar üzrə filterləyə, səbətə əlavə edə  bilərlər.
 
 ---
 
