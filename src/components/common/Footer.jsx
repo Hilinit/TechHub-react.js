@@ -2,13 +2,14 @@
 import { FaInstagram, FaTwitter, FaYoutube, FaPhone } from "react-icons/fa"
 import { IoIosMail } from "react-icons/io"
 import { GrLocationPin } from "react-icons/gr"
+import logo from  '../assets/logo.png'
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#05070c] border-t border-gray-900 text-gray-400 py-12 mt-16 text-xs">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-start justify-between">
         <div className="space-y-4 max-w-sm">
           <div className="flex items-center gap-2">
-            <img src="public/logo.png" className="w-9 h-9 lg:w-14 lg:h-14"/>
+            <img src={logo} className="w-9 h-9 lg:w-14 lg:h-14"/>
             <span className="text-xl font-bold text-white">
               <span className="text-emerald-400">Tech</span>Hub
             </span>
