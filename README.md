@@ -1,40 +1,59 @@
-# 🛒 TechHub Store — Modern E-Commerce Platform
+# 🛒 TechHub Store
 
-TechHub Store — futuristik, kiberpank üslubunda dizayn edilmiş, yüksək performanslı və responsiv e-ticarət (E-commerce) veb tətbiqidir. İstifadəçilər texnoloji məhsulları kateqoriyalar üzrə filterləyə, səbətə əlavə edə  bilərlər.
+Futuristik, kiberpank üslubunda hazırlanmış yüksək performanslı və responsiv e-ticarət platforması.
 
 ---
 
-## 🚀 Xüsusiyyətlər (Features)
+## ✨ Xüsusiyyətlər
 
-- 🎨 **Futuristik & Neomorphic UI:** Neon yaşıl (`emerald-400`) və tünd mövzu (`dark mode`) ilə hazırlanmış müasir görünüş.
-- 🔐 **Autentifikasiya Məhdudiyyəti:** Məhsulu səbətə əlavə etmək üçün istifadəçidən giriş/qeydiyyat tələb olunur (AuthContext inteqrasiyası).
-- 🔍 **Dinamik Kateqoriya Və Filterləmə:** Məhsulları ani olaraq kateqoriyalarına görə qruplaşdırma.
-- 🚫 **Xüsusi Not Found Komponenti:** Axtarış və ya filter nəticəsində məhsul tapılmadıqda istifadəçiyə bildiriş və filteri sıfırlama düyməsi.
+- 🎨 **Kiberpank UI:** Tünd mövzu (`Dark Mode`) və neon yaşıl (`emerald-400`) vurğularla müasir dizayn.
+- 🔐 **Autentifikasiya Məhdudiyyəti:** Səbətdən istifadə üçün giriş və qeydiyyat tələbi (`AuthContext`).
+- 🛒 **Səbət İdarəetməsi:** Məhsul əlavə etmə, sayını dəyişmə, silmə və yaddaşda saxlama (`CartContext` & `LocalStorage`).
+- 🔍 **Dinamik Filter:** Məhsulları kateqoriyalara görə ani qruplaşdırma.
+- 🚫 **Xüsusi NotFound:** Məhsul tapılmadıqda filteri sıfırlama bildirişi.
 - ⚡ **Smooth Scrolling:** Səhifə içi naviqasiyalarda rəvan və səlis sürüşmə effekti.
-- 📱 **Tam Responsiv Dizayn:** Mobil, planşet və dəstək verən bütün ekran ölçüləri üçün 100% uyğunluq.
+- 📱 **100% Responsiv:** Mobil, planşet və masaüstü ekranlara tam uyğunluq.
 
 ---
 
-## 🛠️ İstifadə Olunan Texnologiyalar (Tech Stack)
+## 🛠️ Texnologiyalar
 
-* **Frontend:** React.js (Vite / CRA)
-* **Routing:** React Router DOM (`v6`)
-* **Styling:** Tailwind CSS, React Icons
-* **State Management:** React Context API (`AuthContext`)
+| Sahə | Texnologiya |
+| :--- | :--- |
+| **Frontend Framework** | React.js (Vite / CRA) |
+| **Routing** | React Router DOM v6 |
+| **Styling** | Tailwind CSS, React Icons |
+| **State Management** | Context API (`AuthContext`, `CartContext`) & `useReducer` |
+| **Storage** | Browser LocalStorage |
 
 ---
 
-## 📂 Qovluq Strukturu (Project Structure)
+## 📂 Qovluq Strukturu
 
 ```text
 src/
-├── assets/             # Şəkillər və statik fayllar
-├── components/         # Təkrar istifadə olunan komponentlər
-│   ├── common/         # Navbar, Footer və s.
-│   └── sections/       # ProductList, NotFound və s.
-│   └── guards/         # ErrorBoundary və ProtectedRoute
-├── contexts/           # AuthContext və digər kontekstlər
-├── data/               # Data.jsx (Məhsul siyahısı)
-├── pages/              # Səhifələr (Home, Login, Register)
-├── App.jsx             # Əsas tətbiq komponenti
-└── main.jsx            # Giriş nöqtəsi
+├── assets/         # Şəkillər və statik fayllar
+├── components/     # Təkrar istifadə olunan komponentlər
+│   ├── common/     # Navbar, Footer
+│   ├── sections/   # ProductList, NotFound
+│   └── guards/     # ErrorBoundary, ProtectedRoute
+├── contexts/       # AuthContext, CartContext
+├── data/           # Data.jsx (Məhsul siyahısı)
+├── hooks/          # Xüsusi Hook-lar (useCart, useAuth və s.)
+├── pages/          # Home, Login, Register
+├── App.jsx         # Əsas marşrutlar (Routes)
+└── main.jsx        # Giriş nöqtəsi (Entry point)
+
+
+# 1. Repozitoriyanı klonlayın
+git clone https://github.com/Hilinit/TechHub-react.js.git
+
+-store
+
+# 2. Lazımi paketləri yükləyin
+npm install
+
+# 3. Layihəni lokal serverdə başladın
+npm run dev
+
+Proyektin canlı versiyasına baxmaq üçün: https://techhub-store-ten.vercel.app

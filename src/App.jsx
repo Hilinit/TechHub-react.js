@@ -1,21 +1,26 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ErrorBoundary from './components/guards/ErrorBoundary'
 import { AuthProvider } from './contexts/AuthContext'
-import MainPage from './pages/MainPage'
+import { CartProvider } from './contexts/CartContext'
+import Main from './pages/MainPage' 
 import LoginPage from './pages/LoginPage'
+import NotFound from './components/sections/NotFound'
+import ProtectedRoute from './components/guards/ProtectedRoute'
 
 export default function App() {
   return (
-    <ErrorBoundary>
-      <AuthProvider>
+    <AuthProvider>
+      <CartProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<Main />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/checkout" element={<div className="p-10 text-white text-center">Ödəniş Səhifəsi</div>} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </AuthProvider>
-    </ErrorBoundary>
+      </CartProvider>
+    </AuthProvider>
   )
 }

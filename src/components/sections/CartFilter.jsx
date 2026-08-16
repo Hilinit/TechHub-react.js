@@ -1,5 +1,3 @@
-
-
 const categories = ["Hamısı", "Maus", "Klaviatura", "Flaş Yaddaş", "Qulaqlıq", "Sistem Bloku", "Monitor", "Audio", "Veb-Kamera", "Daxili Yaddaş", "Aksesuar"]
 
 export default function CartFilter({ selectedCategory, setSelectedCategory }) {

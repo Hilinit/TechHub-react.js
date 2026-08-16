@@ -1,26 +1,14 @@
-import { useState } from 'react'
 import { IoMdClose } from "react-icons/io"
 import { RiDeleteBinLine } from "react-icons/ri"
+import { useCart } from '../../contexts/CartContext'
+import { useCartTotal } from '../../hooks/useCartTotal'
 
-export default function Basket({ isOpen, onClose, cart, setCart }) {
-  const [discountPercent] = useState(0)
+export default function Basket({ isOpen, onClose }) {
+  const { cart, dispatch } = useCart()
+  const { rawSubtotal, totalDiscount, finalTotal } = useCartTotal()
   if (!isOpen) return null
-  const updateQuantity = (id, delta) => {
-    setCart(prev => prev.map(item => {
-      if (item.id === id) { 
-        const newQty = item.qty + delta;
-        return newQty > 0 ? { ...item, qty: newQty } : item
-      }
-      return item
-    }));
-  }
-  const removeFromCart = (id) => {setCart(prev => prev.filter(item => item.id !== id))}
-  const rawSubtotal = cart.reduce((acc, item) => acc + (item.oldPrice || item.price) * item.qty, 0)
-  const currentSubtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
-  const baseDiscount = rawSubtotal - currentSubtotal
-  const promoDiscount = (currentSubtotal * discountPercent)/100
-  const totalDiscount = baseDiscount + promoDiscount
-  const finalTotal = rawSubtotal - totalDiscount
+  const updateQuantity = (id, delta) => { dispatch({ type: 'UPDATE_QTY', payload: { id, delta } }) }
+  const removeFromCart = (id) => { dispatch({ type: 'REMOVE_FROM_CART', payload: id }) }
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
@@ -82,15 +70,15 @@ export default function Basket({ isOpen, onClose, cart, setCart }) {
               <div className="space-y-4 text-sm text-gray-300 border-b border-gray-800/80 pb-6">
                 <div className="flex justify-between">
                   <span className="text-gray-300">Ümumi qiymət</span>
-                  <span className="font-bold text-white">{rawSubtotal.toFixed(2)} $</span>
+                  <span className="font-bold text-white">{rawSubtotal} $</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-300">Ümumi endirim</span>
-                  <span className="font-bold text-emerald-400">{totalDiscount.toFixed(2)} $</span>
+                  <span className="font-bold text-emerald-400">{totalDiscount} $</span>
                 </div>
                 <div className="flex justify-between text-base font-bold text-white pt-1">
                   <span>Yekun</span>
-                  <span className="text-emerald-400">{finalTotal.toFixed(2)} $</span>
+                  <span className="text-emerald-400">{finalTotal} $</span>
                 </div>
               </div>
             </div>
