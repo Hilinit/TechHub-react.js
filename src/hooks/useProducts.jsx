@@ -5,7 +5,7 @@ export function useProducts(selectedCategory) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://github.com/Hilinit/datas/blob/main/TechHubData/products-recat.js.json')
+    fetch('https://raw.githubusercontent.com/Hilinit/datas/main/TechHubData/products-recat.js.json')
       .then(res => res.json())
       .then(data => {
         setProducts(data)
