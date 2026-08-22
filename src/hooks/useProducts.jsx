@@ -5,7 +5,7 @@ export function useProducts(selectedCategory) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://69c53df08a5b6e2dec2c09e9.mockapi.io/data')
+    fetch('https://github.com/Hilinit/datas/blob/main/TechHubData/products-recat.js.json')
       .then(res => res.json())
       .then(data => {
         setProducts(data)
